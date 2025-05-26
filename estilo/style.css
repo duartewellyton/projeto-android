@@ -1,0 +1,206 @@
+@charset "UTF-8"; /*Primeira linha padrão*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /*Esta regra @import é usada para importar uma fonte externa do Google Fonts*/
+
+@font-face { /*Este bloco @font-face permite definir uma fonte personalizada que está hospedada localmente*/
+    font-family: 'Android'; /*Define o nome pelo qual esta fonte será referenciada no CSS.*/
+    src: url('../fontes/idroid.otf') format('opentype'); /*Especifica o caminho para o arquivo da fonte (idroid.otf) e o seu formato (opentype). O ../ indica que o arquivo está na pasta "fontes" um nível acima do diretório atual.*/
+    font-weight: normal; /*Define o peso padrão para esta fonte como normal.*/
+}
+
+:root { /*define variáveis CSS globais. Essas variáveis (também chamadas de propriedades personalizadas CSS)*/
+    --cor0:#c5ebd6; /*Definem diferentes tons de verde para serem usados como cores.*/
+    --cor1:#83e1ad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#063d1e; 
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif; /* Define uma pilha de fontes genéricas para o texto padrão.*/
+    --fonte-destaque: "Bebas Neue", sans-serif; /*Define a fonte "Bebas Neue" para títulos e elementos de destaque.*/
+    --fonte-android: 'Android', sans-serif; /*Define a fonte personalizada 'Android' que foi importada anteriormente.*/
+    
+}
+
+* { /*O seletor universal * aplica estilos a todos os elementos HTML.*/
+    margin: 0px; /*Remove a margem externa padrão de todos os elementos.*/
+    padding: 0px; /*Remove o preenchimento interno padrão de todos os elementos. Isso é comumente usado como um "reset" básico para ter controle total sobre os espaçamentos.*/
+}
+
+body { /*Este bloco define estilos para a tag <body>.*/
+    background-color: var(--cor0); /*Define a cor de fundo do corpo da página usando a variável CSS --cor0.*/
+    font-family: var(--fonte-padrao); /* Aplica a pilha de fontes definida em --fonte-padrao a todo o texto dentro do <body>.*/
+}
+
+a.externo::after { /*Este é um pseudo-elemento que adiciona conteúdo depois de links com a classe externo.*/
+    content: '\00A0\1F517'; /*Adiciona um espaço (\00A0) seguido por um ícone de link (\1F517, que é o código Unicode para um emoji de link/corrente) após o texto de cada link externo, visualmente indicando que é um link para fora do site.*/
+}
+
+header { /*Este bloco estiliza a tag <header>.*/
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /*Aplica um degradê linear de fundo, começando com a cor --cor3 no topo e terminando com a --cor5 na parte inferior.*/
+    min-height: 150px; /*Garante que o cabeçalho tenha uma altura mínima de 150 pixels.*/
+    text-align: center; /*Centraliza o texto dentro do cabeçalho.*/
+    padding-top: 40px; /*Adiciona um preenchimento de 40 pixels na parte superior do cabeçalho.*/
+}
+
+header > h1 { /*Estiliza o elemento <h1> que é um filho direto do <header>.*/
+    color: white; /*Define a cor do texto como branco.*/
+    font-family: var(--fonte-destaque); /*Aplica a fonte de destaque definida.*/
+    font-size: 3em; /*Define o tamanho da fonte como 3 vezes o tamanho padrão do elemento pai.*/
+    font-weight: normal; /*Garante que o texto do título não seja em negrito.*/
+    margin-bottom: 20px; /*Adiciona uma margem de 20 pixels abaixo do título.*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267); /*Adiciona uma sombra ao texto para melhorar a legibilidade, com deslocamento de 2px na horizontal e vertical, sem desfoque e uma cor preta semitransparente.*/
+}
+
+header > p { /*Estiliza os parágrafos (<p>) que são filhos diretos do <header>.*/
+    font-family: var(--fonte-padrao); /*Aplica a fonte padrão.*/
+    font-size: 1.2em; /*Aumenta o tamanho da fonte em 20%.*/
+    color: white; /*Define a cor do texto como branco.*/
+    max-width: 500px; /*Limita a largura máxima do parágrafo a 500 pixels.*/
+    padding-right: 10px; /*Adicionam um preenchimento interno de 10 pixels nas laterais.*/
+    padding-left: 10px; /*Adicionam um preenchimento interno de 10 pixels nas laterais.*/
+    margin: auto; /*Centraliza o parágrafo horizontalmente dentro do seu contêiner.*/
+    margin-bottom: 20px; /*Adiciona uma margem de 20 pixels abaixo do parágrafo.*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.315); /*Adiciona uma sombra ao texto, similar ao h1, mas com uma opacidade ligeiramente diferente.*/
+}
+
+nav { /*Estiliza a tag <nav>.*/
+    background-color: var(--cor5); /* Define a cor de fundo usando a variável --cor5 (um tom escuro de verde).*/
+    padding: 10px; /*Adiciona um preenchimento interno de 10 pixels em todos os lados.*/
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.288); /*Adiciona uma sombra à caixa da navegação, dando uma sensação de profundidade.*/
+
+}
+
+nav > a { /*Estiliza os links (<a>) que são filhos diretos da <nav>.*/
+    color: var(--cor1); /*Define a cor do texto do link.*/
+    padding: 10px; /*Adiciona preenchimento interno aos links, tornando a área clicável maior.*/
+    border-radius: 5px; /* Arredonda os cantos dos links em 5 pixels.*/
+    text-decoration: none; /*Remove o sublinhado padrão dos links.*/
+    font-weight: bold; /*Deixa o texto do link em negrito.*/
+    transition-duration: 0.5s; /*Define que qualquer mudança de propriedade CSS (como cor ou fundo) para este elemento terá uma transição suave de 0.5 segundos.*/
+}
+
+nav > a:hover { /*Define o estilo dos links da navegação quando o mouse passa por cima (:hover).*/
+    background-color: var(--cor3); /*Altera a cor de fundo para --cor3.*/
+    color: var(--cor5); /*Altera a cor do texto para --cor5. A transição suave definida anteriormente fará com que essa mudança seja animada.*/
+}
+
+main { /*Estiliza a tag <main>, que geralmente contém o conteúdo principal da página.*/
+    min-width: 300px; /*Garante que o conteúdo principal tenha uma largura mínima de 300 pixels.*/
+    max-width: 1000px; /*Limita a largura máxima do conteúdo principal a 1000 pixels.*/
+    margin: auto; /*Centraliza o bloco <main> horizontalmente na página.*/
+    margin-bottom: 30px; /*Adiciona uma margem de 30 pixels abaixo do conteúdo principal.*/
+    padding: 20px; /*Adiciona um preenchimento interno de 20 pixels.*/
+    background-color: white; /*Define o fundo do conteúdo principal como branco.*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.384); /* Adiciona uma sombra suave à caixa do conteúdo principal.*/
+    border-bottom-left-radius: 10px; /* Arredonda os cantos inferiores esquerdo e direito em 10 pixels.*/
+    border-bottom-right-radius: 10px; /* Arredonda os cantos inferiores esquerdo e direito em 10 pixels.*/
+}
+
+main h1 { /*Estiliza os títulos de nível 1 (<h1>) dentro do <main>.*/
+    color: var(--cor5); /* Define a cor do texto.*/
+    font-family: var(--fonte-android); /*Aplica a fonte personalizada 'Android'.*/
+    font-weight: normal; /* Garante que o texto não seja em negrito (já que a fonte Android tem seu próprio peso).*/
+    font-size: 1.8em; /*Define o tamanho da fonte.*/
+}
+
+main h2 { /*Estiliza os títulos de nível 2 (<h2>) dentro do <main>.*/
+    color: var(--cor4); /*Define a cor do texto.*/
+    font-family: var(--fonte-android); /*Aplica a fonte personalizada 'Android'.*/
+    font-size: 1.3em; /*Aplica a fonte personalizada 'Android'.*/
+    font-weight: normal; /*Garante que o texto não seja em negrito.*/
+    background-image: linear-gradient(to right, var(--cor1), transparent); /*Adiciona um degradê de fundo que começa com a cor --cor1 à esquerda e desvanece para transparente à direita.*/
+    text-indent: 8px; /*Adiciona um recuo de 8 pixels na primeira linha do texto.*/
+}
+
+main p { /*Estiliza os parágrafos (<p>) dentro do <main>.*/
+    margin: 15px 0px; /*Adiciona uma margem de 15 pixels acima e abaixo de cada parágrafo, e 0 pixels nas laterais.*/
+    text-align: justify; /* Alinha o texto de forma justificada, onde as linhas são esticadas para preencher a largura total.*/
+    text-indent: 30px; /* Recua a primeira linha de cada parágrafo em 30 pixels.*/
+    font-size: 1em; /*Define o tamanho da fonte como o padrão do elemento pai.*/
+    line-height: 2em; /*Define a altura da linha como 2 vezes o tamanho da fonte, aumentando o espaçamento entre as linhas para melhor legibilidade.*/
+}
+
+main strong { /*Estiliza o texto em negrito (<strong>) dentro do <main>.*/
+    color: var(--cor4); /*Define a cor do texto.*/
+    font-weight: bold; /*Garante que o texto seja exibido em negrito.*/
+}
+
+main a { /*Estiliza os links (<a>) dentro do <main>.*/
+    text-decoration: none; /*Remove o sublinhado padrão.*/
+    font-weight: bold; /*Deixa o texto do link em negrito.*/
+    color: var(--cor5); /*Define a cor do texto do link.*/
+    background-color: var(--cor1); /*Define a cor de fundo do link.*/
+    padding: 2px 6px; /*Adiciona um pequeno preenchimento interno ao redor do texto do link.*/
+}
+
+main a:hover { /*Estiliza os links dentro do <main> quando o mouse passa por cima.*/
+    text-decoration: underline; /*Adiciona um sublinhado ao link.*/
+    color: var(--cor4); /*Altera a cor do texto para --cor4.*/
+}
+
+main img { /*Estiliza as imagens (<img>) dentro do <main>.*/
+    width: 100%; /*Faz com que a imagem ocupe 100% da largura do seu contêiner pai.*/
+}
+
+main img.pequena { /*Estiliza imagens com a classe pequena dentro do <main>.*/
+    max-width: 350px; /*Limita a largura máxima dessas imagens a 350 pixels.*/
+    display: block; /*Transforma a imagem em um elemento de bloco, o que permite o uso de margin: auto.*/
+    margin: auto; /*Centraliza a imagem horizontalmente.*/
+}
+
+div.video { /*Estiliza uma div com a classe video, usada para tornar vídeos responsivos.*/
+    background-color: var(--cor5); /*Define a cor de fundo.*/
+    margin: 0px -20px 30px -20px; /*Adiciona margens, expandindo a div para as laterais (ela "invade" o padding do main). A margem negativa para os lados é para esticar o fundo do vídeo de ponta a ponta.*/
+    padding: 20px; /*Adiciona um preenchimento de 20 pixels.*/
+    padding-bottom: 58%; /*Esta é a parte crucial para a responsividade. Define o preenchimento inferior como 58% da largura do contêiner. Isso cria um espaço para o vídeo manter sua proporção (por exemplo, 16:9, que é aproximadamente 56.25%).*/
+    position: relative; /*Essencial para o posicionamento do iframe filho.*/
+}
+
+div.video > iframe { /*Estiliza o iframe (geralmente usado para incorporar vídeos) que é filho direto da div.video.*/
+    position: absolute; /*Posiciona o iframe de forma absoluta em relação à sua div.video pai (que tem position: relative).*/
+    top: 5%; /*Posiciona o iframe 5% da borda superior e esquerda da div pai.*/
+    left: 5%; /*Posiciona o iframe 5% da borda superior e esquerda da div pai.*/
+    width: 90%; /* Define a largura e altura do iframe como 90% da div pai. Combinado com os 5% de top e left, isso garante que o vídeo fique centralizado com uma pequena margem interna, ocupando o espaço criado pelo padding-bottom da div.video.*/
+    height: 90%; /* Define a largura e altura do iframe como 90% da div pai. Combinado com os 5% de top e left, isso garante que o vídeo fique centralizado com uma pequena margem interna, ocupando o espaço criado pelo padding-bottom da div.video.*/
+}
+
+aside { /*Estiliza a tag <aside>, usada para conteúdo secundário ou barras laterais.*/
+    background-color: var(--cor1); /*Define a cor de fundo.*/
+    padding: 10px; /* Adiciona um preenchimento interno.*/
+    border-radius: 10px; /*Arredonda todos os cantos em 10 pixels.*/
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.288); /*Adiciona uma sombra à caixa.*/
+}
+
+aside > h3 { /*Estiliza o título de nível 3 (<h3>) que é um filho direto do <aside>.*/
+    background-color: var(--cor4); /*Define a cor de fundo do título.*/
+    color: white; /*Define a cor do texto como branco.*/
+    padding: 10px; /*Adiciona preenchimento interno ao título.*/
+    margin: -10px -10px 0px -10px; /*Usa margens negativas para que o título se estenda até as bordas do <aside>, sobrepondo o padding do pai.*/
+    border-radius: 10px 10px 0px 0px; /* Arredonda apenas os cantos superiores esquerdo e direito, fazendo com que o título pareça uma "cabeça" arredondada para a barra lateral.*/
+}
+
+aside > ul { /*Estiliza as listas não ordenadas (<ul>) que são filhas diretas do <aside>.*/
+    list-style-type: '\2714\00A0\00A0'; /*Substitui o marcador padrão da lista (geralmente um círculo ou disco) por um check-mark (✓, código Unicode \2714) seguido de dois espaços.*/
+    list-style-position: inside; /* Garante que o marcador da lista esteja dentro do conteúdo do item da lista.*/
+    columns: 2; /*Divide os itens da lista em duas colunas, se houver espaço suficiente.*/
+}
+
+footer { /*Estiliza a tag <footer>.*/
+    background-color: var(--cor5); /*Define a cor de fundo do rodapé.*/
+    color: white; /*Define a cor do texto como branco.*/
+    text-align: center; /*Centraliza o texto dentro do rodapé.*/
+    font-size: 0.8em; /*Diminui o tamanho da fonte para 80% do tamanho padrão.*/
+    padding: 5px; /*Adiciona um pequeno preenchimento interno.*/
+}
+
+footer a { /*Estiliza os links (<a>) dentro do <footer>.*/
+    color: wheat; /*Define a cor do texto do link como um tom de marrom claro.*/
+    font-weight: bolder; /*Torna o texto do link mais negrito do que o padrão.*/
+    text-align: none; /*Esta propriedade está incorreta aqui; text-decoration: none; seria o correto para remover o sublinhado. text-align é para alinhamento de texto.*/
+}
+
+footer a:hover { /*Define o estilo dos links do rodapé quando o mouse passa por cima.*/
+    text-decoration: underline; /*Adiciona um sublinhado.*/
+    color: var(--cor1); /*Altera a cor do texto para --cor1.*/
+}
