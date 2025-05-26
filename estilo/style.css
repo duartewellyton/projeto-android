@@ -60,7 +60,7 @@ header > p { /*Estiliza os parágrafos (<p>) que são filhos diretos do <header>
     padding-right: 10px; /*Adicionam um preenchimento interno de 10 pixels nas laterais.*/
     padding-left: 10px; /*Adicionam um preenchimento interno de 10 pixels nas laterais.*/
     margin: auto; /*Centraliza o parágrafo horizontalmente dentro do seu contêiner.*/
-    margin-bottom: 20px; /*Adiciona uma margem de 20 pixels abaixo do parágrafo.*/
+    padding-bottom: 50px; /*Adiciona uma margem de 20 pixels abaixo do parágrafo.*/
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.315); /*Adiciona uma sombra ao texto, similar ao h1, mas com uma opacidade ligeiramente diferente.*/
 }
 
